@@ -59,7 +59,7 @@ body{
 
 .card{
     position: relative;
-    background-image:  url("dreamy-colorful-smoke-clouds.jpg");
+    background-image:  url("bg-img.jpg");
     background-size: cover;
     background-position: center;
     padding: 70px;
