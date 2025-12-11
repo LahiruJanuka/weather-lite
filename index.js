@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const card = document.querySelector(".card");
   const mainInfo = document.querySelector(".mainInfo");
   const subInfo = document.querySelector(".subInfo");
-  // const apikey = import.meta.env.WEATHER_API_KEY;
-  const apikey = process.env.WEATHER_API_KEY;
+  const apikey = b5fc9e76f0c25528d3bd8433c5c25d13;
 
   formData.addEventListener("submit", async event => {
     event.preventDefault();
