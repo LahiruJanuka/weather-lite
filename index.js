@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
             sys: { country = "" } = {}, 
             main: { temp = "", humidity = "", feels_like = "", pressure = "" } = {}, 
             wind: { speed = "" } = {}, 
-            timezone: timezoneOffsetSeconds = 0, 
-            dt: timestampOffsetSeconds = 0,
+            timezone: timezone, 
+            dt: dt,
             weather: [{main, description}] } = data;
 
     // Clear existing content only inside containers
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Build main info
     const main_info = [
       { label: "cityNameDisplay", value: `${city} | ${country}` },
-      { label: "datetimeDisplay", value: formatWeatherDateTime(timestampOffsetSeconds, timezoneOffsetSeconds) },
+      { label: "datetimeDisplay", value: formatWeatherDateTime(dt, timezone) },
       { label: "tempDisplay", value: `${temp} °C` },
       { label: "descriptionDisplay", value: `${main} : ${description}` }
     ];
@@ -98,8 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return errorMsg;
   }
 
-  function formatWeatherDateTime(timestampOffsetSeconds, timezoneOffsetSeconds) {
-    const localTime = new Date((timestampOffsetSeconds + timezoneOffsetSeconds) * 1000);
+  function formatWeatherDateTime(dt, timezone) {
+    const localTime = new Date((dt + timezone - 19800 + 180) * 1000);
     const parts = new Intl.DateTimeFormat('en-US', {
       weekday: 'long',
       month: 'short',
