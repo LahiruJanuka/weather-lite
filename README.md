@@ -79,7 +79,7 @@ git clone https://github.com/LahiruJanuka/weather-lite.git
 Open `index.js` and replace the placeholder with your key:
 
 ```javascript
-const API_KEY = "YOUR_API_KEY_HERE"; // Replace with your API key
+const apikey = "YOUR_API_KEY_HERE"; // Replace with your API key
 ```
 
 ### 4️⃣ Run the Project
